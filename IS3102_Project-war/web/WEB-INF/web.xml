@@ -1078,6 +1078,10 @@
         <servlet-class>A5_servlets.Analytical_ValueAnalysisSendLoyaltyRPServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Ecommerce_getMemberServlet</servlet-name>
+        <servlet-class>B_servlets.Ecommerce_getMemberServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Analytical_ValueAnalysisSendLoyaltyMIServlet</servlet-name>
         <servlet-class>A5_servlets.Analytical_ValueAnalysisSendLoyaltyMIServlet</servlet-class>
     </servlet>
@@ -1142,8 +1146,16 @@
         <url-pattern>/RoleManagement_AddRoleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>Ecommerce_getMemberServlet</servlet-name>
+        <url-pattern>/Ecommerce_getMemberServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>RoleManagement_UpdateRoleServlet</servlet-name>
         <url-pattern>/RoleManagement_UpdateRoleServlet</url-pattern>
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name> Ecommerce_getMemberServlet</servlet-name>
+        <url-pattern>/ Ecommerce_getMemberServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BomManagement_BomServlet</servlet-name>

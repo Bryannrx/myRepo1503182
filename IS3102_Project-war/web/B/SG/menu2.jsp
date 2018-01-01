@@ -42,7 +42,7 @@
                     <a href="shoppingCart.jsp"><i class="icon icon-shopping-cart"></i>Shopping Cart</a>
                 </li>
                 <li>
-                    <a href="../../ECommerce_GetMember"><i class="icon icon-user"></i>Profile</a>
+                    <a href="../../Ecommerce_getMemberServlet"><i class="icon icon-user"></i>Profile</a>
                 </li>
                 <li>
                     <a href="contactUs.jsp"><i class="icon icon-shopping-cart"></i>Contact Us</a>

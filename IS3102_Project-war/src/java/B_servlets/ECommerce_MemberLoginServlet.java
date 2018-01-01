@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
@@ -45,9 +46,10 @@ public class ECommerce_MemberLoginServlet extends HttpServlet {
             if (memberEmail != null) {
                 List<CountryEntity> countries = facilityManagementBean.getListOfCountries();
                 session.setAttribute("countries", countries);
-
+                
                 session.setAttribute("memberEmail", memberEmail);
-                response.sendRedirect("ECommerce_GetMember");
+                RequestDispatcher rd = request.getRequestDispatcher("Ecommerce_getMemberServlet");
+                rd.forward(request,response);
             } else {
                 result = "Login fail. Username or password is wrong or account is not activated.";
                 response.sendRedirect("/IS3102_Project-war/B/SG/memberLogin.jsp?errMsg=" + result);
@@ -67,7 +69,7 @@ public class ECommerce_MemberLoginServlet extends HttpServlet {
                 .queryParam("password", password);
         Invocation.Builder invocationBuilder = target.request(MediaType.APPLICATION_JSON);
         Response response = invocationBuilder.get();
-        System.out.println("status: " + response.getStatus());
+        System.out.println("login status: " + response.getStatus());
 
         if (response.getStatus() != 200) {
             return null;
